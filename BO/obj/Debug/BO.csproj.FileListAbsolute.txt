@@ -1,0 +1,12 @@
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\BO.dll.config
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\BO.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\BO.pdb
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\EntityFramework.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\EntityFramework.SqlServer.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\EntityFramework.xml
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\bin\Debug\EntityFramework.SqlServer.xml
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\obj\Debug\BO.csproj.CoreCompileInputs.cache
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\obj\Debug\BO.csproj.CopyComplete
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\obj\Debug\BO.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\obj\Debug\BO.pdb
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\BO\obj\Debug\BO.csprojAssemblyReference.cache

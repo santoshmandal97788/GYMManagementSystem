@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GymManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tblCustomer">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblCustomerMembership">
+    <Key>
+      <PropertyRef Name="CM_ID" />
+    </Key>
+    <Property Name="CM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="MT_ID" Type="int" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime" Nullable="false" />
+    <Property Name="Months" Type="int" Nullable="false" />
+    <Property Name="DateTo" Type="datetime" Nullable="false" />
+    <Property Name="ChargesPerMonth" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPercentage" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATPercentage" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ServiceTAXPercentage" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ServiceTAXAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalCharges" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BillDate" Type="datetime" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GrandTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalPaid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblFitnessMeasurement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerM_ID" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BodyFat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BodyMass" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLogs">
+    <Key>
+      <PropertyRef Name="LId" />
+    </Key>
+    <Property Name="LId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Operation" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblMembershipType">
+    <Key>
+      <PropertyRef Name="MT_ID" />
+    </Key>
+    <Property Name="MT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipType" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ChargesPerMonth" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ServiceTAX" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOrderedProduct">
+    <Key>
+      <PropertyRef Name="B_ID" />
+    </Key>
+    <Property Name="B_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BILLNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="GrandTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cash" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Change" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BillDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblProduct">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Features" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ServiceTAX" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblRegistration">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="JoiningDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblSoldProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="VATPer" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VATAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ServiceTaxPer" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ServiceTaxAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPer" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblStock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StockNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSubCategory">
+    <Key>
+      <PropertyRef Name="SubCatId" />
+    </Key>
+    <Property Name="SubCatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="SubCategoryName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tblSupplier">
+    <Key>
+      <PropertyRef Name="S_ID" />
+    </Key>
+    <Property Name="S_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="S_Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblTemp_Stock">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblCustomerMembership_tblCustomer">
+    <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="1" />
+    <End Role="tblCustomerMembership" Type="Self.tblCustomerMembership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="tblCustomerMembership">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCustomerMembership_tblMembershipType">
+    <End Role="tblMembershipType" Type="Self.tblMembershipType" Multiplicity="1" />
+    <End Role="tblCustomerMembership" Type="Self.tblCustomerMembership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMembershipType">
+        <PropertyRef Name="MT_ID" />
+      </Principal>
+      <Dependent Role="tblCustomerMembership">
+        <PropertyRef Name="MT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFitnessMeasurement_tblCustomerMembership">
+    <End Role="tblCustomerMembership" Type="Self.tblCustomerMembership" Multiplicity="1" />
+    <End Role="tblFitnessMeasurement" Type="Self.tblFitnessMeasurement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomerMembership">
+        <PropertyRef Name="CM_ID" />
+      </Principal>
+      <Dependent Role="tblFitnessMeasurement">
+        <PropertyRef Name="CustomerM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLogs_tblRegistration">
+    <End Role="tblRegistration" Type="Self.tblRegistration" Multiplicity="0..1" />
+    <End Role="tblLogs" Type="Self.tblLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRegistration">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblLogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduct_tblSubCategory1">
+    <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubCategory">
+        <PropertyRef Name="SubCatId" />
+      </Principal>
+      <Dependent Role="tblProduct">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSoldProduct_tblOrderedProduct">
+    <End Role="tblOrderedProduct" Type="Self.tblOrderedProduct" Multiplicity="1" />
+    <End Role="tblSoldProduct" Type="Self.tblSoldProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOrderedProduct">
+        <PropertyRef Name="B_ID" />
+      </Principal>
+      <Dependent Role="tblSoldProduct">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSoldProduct_tblProduct">
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
+    <End Role="tblSoldProduct" Type="Self.tblSoldProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduct">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="tblSoldProduct">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStock_tblProduct">
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
+    <End Role="tblStock" Type="Self.tblStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduct">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="tblStock">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStock_tblSupplier">
+    <End Role="tblSupplier" Type="Self.tblSupplier" Multiplicity="1" />
+    <End Role="tblStock" Type="Self.tblStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSupplier">
+        <PropertyRef Name="S_ID" />
+      </Principal>
+      <Dependent Role="tblStock">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStock_tblTemp_Stock">
+    <End Role="tblTemp_Stock" Type="Self.tblTemp_Stock" Multiplicity="1" />
+    <End Role="tblStock" Type="Self.tblStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTemp_Stock">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tblStock">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSubCategory_tblCategory">
+    <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="0..1" />
+    <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCategory">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="tblSubCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GymManagementDBModelStoreContainer">
+    <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCustomerMembership" EntityType="Self.tblCustomerMembership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFitnessMeasurement" EntityType="Self.tblFitnessMeasurement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLogs" EntityType="Self.tblLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMembershipType" EntityType="Self.tblMembershipType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOrderedProduct" EntityType="Self.tblOrderedProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRegistration" EntityType="Self.tblRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSoldProduct" EntityType="Self.tblSoldProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStock" EntityType="Self.tblStock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSubCategory" EntityType="Self.tblSubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSupplier" EntityType="Self.tblSupplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTemp_Stock" EntityType="Self.tblTemp_Stock" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblCustomerMembership_tblCustomer" Association="Self.FK_tblCustomerMembership_tblCustomer">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblCustomerMembership" EntitySet="tblCustomerMembership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCustomerMembership_tblMembershipType" Association="Self.FK_tblCustomerMembership_tblMembershipType">
+      <End Role="tblMembershipType" EntitySet="tblMembershipType" />
+      <End Role="tblCustomerMembership" EntitySet="tblCustomerMembership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFitnessMeasurement_tblCustomerMembership" Association="Self.FK_tblFitnessMeasurement_tblCustomerMembership">
+      <End Role="tblCustomerMembership" EntitySet="tblCustomerMembership" />
+      <End Role="tblFitnessMeasurement" EntitySet="tblFitnessMeasurement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLogs_tblRegistration" Association="Self.FK_tblLogs_tblRegistration">
+      <End Role="tblRegistration" EntitySet="tblRegistration" />
+      <End Role="tblLogs" EntitySet="tblLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduct_tblSubCategory1" Association="Self.FK_tblProduct_tblSubCategory1">
+      <End Role="tblSubCategory" EntitySet="tblSubCategory" />
+      <End Role="tblProduct" EntitySet="tblProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSoldProduct_tblOrderedProduct" Association="Self.FK_tblSoldProduct_tblOrderedProduct">
+      <End Role="tblOrderedProduct" EntitySet="tblOrderedProduct" />
+      <End Role="tblSoldProduct" EntitySet="tblSoldProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSoldProduct_tblProduct" Association="Self.FK_tblSoldProduct_tblProduct">
+      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblSoldProduct" EntitySet="tblSoldProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStock_tblProduct" Association="Self.FK_tblStock_tblProduct">
+      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblStock" EntitySet="tblStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStock_tblSupplier" Association="Self.FK_tblStock_tblSupplier">
+      <End Role="tblSupplier" EntitySet="tblSupplier" />
+      <End Role="tblStock" EntitySet="tblStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStock_tblTemp_Stock" Association="Self.FK_tblStock_tblTemp_Stock">
+      <End Role="tblTemp_Stock" EntitySet="tblTemp_Stock" />
+      <End Role="tblStock" EntitySet="tblStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSubCategory_tblCategory" Association="Self.FK_tblSubCategory_tblCategory">
+      <End Role="tblCategory" EntitySet="tblCategory" />
+      <End Role="tblSubCategory" EntitySet="tblSubCategory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

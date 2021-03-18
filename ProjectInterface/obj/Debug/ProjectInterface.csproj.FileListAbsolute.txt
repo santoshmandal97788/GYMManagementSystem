@@ -1,0 +1,15 @@
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\ProjectInterface.dll.config
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\ProjectInterface.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\ProjectInterface.pdb
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\BO.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\EntityFramework.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\EntityFramework.SqlServer.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\BO.pdb
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\BO.dll.config
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\EntityFramework.xml
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\bin\Debug\EntityFramework.SqlServer.xml
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\obj\Debug\ProjectInterface.csprojAssemblyReference.cache
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\obj\Debug\ProjectInterface.csproj.CoreCompileInputs.cache
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\obj\Debug\ProjectInterface.csproj.CopyComplete
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\obj\Debug\ProjectInterface.dll
+D:\3rd semester\Dot Net Class Broadway Video\Projects\GYM Management System\GYMManagementSystem\ProjectInterface\obj\Debug\ProjectInterface.pdb
